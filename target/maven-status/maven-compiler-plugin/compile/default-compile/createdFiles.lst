@@ -1,2 +1,0 @@
-sns\triggers\lambda\invokes\statefunction\put\dynamodb\SNSInvokeLambda.class
-com\amazonaws\samples\UserRegoHandler.class
