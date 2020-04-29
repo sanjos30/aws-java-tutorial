@@ -7,33 +7,48 @@
 	<dependencies>
 
 		<!-- Dont use entire SDK unless necessary -->
-		<!--dependency> <groupId>com.amazonaws</groupId> <artifactId>aws-java-sdk</artifactId> 
-			<version>1.11.256</version> </dependency -->
+		<!-- <dependency> <groupId>com.amazonaws</groupId> <artifactId>aws-java-sdk</artifactId> 
+			<version>1.11.256</version> </dependency> -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-core</artifactId>
+            <version>1.11.720</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-sqs</artifactId>
+            <version>1.11.720</version>
+        </dependency>
+        <!-- Required for RequestHandler Core, Context Functionality -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
+            <version>2.2.7</version>
+        </dependency>
 
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-stepfunctions</artifactId>
 			<version>1.11.285</version>
+			<!-- <version>1.11.285</version> -->
+		</dependency>
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-dynamodb</artifactId>
+		    <version>1.11.770</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId> aws-lambda-java-core</artifactId>
-			<version>1.2.0</version>
-		</dependency>
-
-		<!-- SNN -->
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-lambda-java-events</artifactId>
-			<version>1.3.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.6</version>
-		</dependency>
+<!--         <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-sqs</artifactId>
+           <version>1.11.720</version>
+           <version>[1.2.3,)</version>
+        </dependency> -->
 
 	</dependencies>
 </project>

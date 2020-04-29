@@ -8,6 +8,8 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SNSEvent;
+import com.amazonaws.services.lambda.runtime.events.SQSEvent;
+import com.amazonaws.services.lambda.runtime.events.SQSEvent.SQSMessage;
 import com.amazonaws.services.stepfunctions.AWSStepFunctionsAsync;
 import com.amazonaws.services.stepfunctions.AWSStepFunctionsAsyncClientBuilder;
 import com.amazonaws.services.stepfunctions.model.StartExecutionRequest;
@@ -26,7 +28,7 @@ public class SNSInvokeLambda implements RequestHandler<SNSEvent,String>{
 		
 		//Init Lambda Logging
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-		context.getLogger().log("Invocation started: " + timeStamp);
+		context.getLogger().log("Invocation started: handleRequest: SNSEvent" + timeStamp);
 		context.getLogger().log(incomingEvent.getRecords().get(0).getSNS().getMessage());
 
 		//The JSON expects the content in JSON format.
@@ -62,7 +64,5 @@ public class SNSInvokeLambda implements RequestHandler<SNSEvent,String>{
 		client.shutdown();
 		return response;
 	}
-
-	
 	
 }
